@@ -62,3 +62,4 @@ group :development do
 end
 
 gem "responders"
+gem "shakapacker", "~> 6.6.0"
