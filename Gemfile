@@ -63,3 +63,5 @@ end
 
 gem "responders"
 gem "shakapacker", "~> 6.6.0"
+
+gem "tailwindcss-rails", "~> 4.1"

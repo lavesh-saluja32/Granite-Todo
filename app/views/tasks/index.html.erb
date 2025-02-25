@@ -1,6 +1,19 @@
-<H1>List of tasks will appear here</H1>
-<ul>
-<% @tasks.each do |task| %>
-  <li><%= task.title %></li>
-<% end %>
+<h1 class="text-3xl font-bold text-blue-600">List of tasks will appear here</h1>
+
+<ul class="list-disc pl-5">
+  <% @tasks.each do |task| %>
+    <li class="p-2 bg-gray-100 border-b"><%= task.title %></li>
+  <% end %>
 </ul>
+
+<ol class="list-decimal pl-5">
+  <li>sa</li>
+  <li>sa</li>
+  <li>sa</li>
+  <li>sa</li>
+</ol>
+
+<div class="h-screen flex bg-blue-900 text-red-500">
+  <p>Hello World!</p>
+  <p>Hello World!</p>
+</div>
