@@ -32,6 +32,14 @@ const NavBar = () => {
             >
               Add new task
             </Link>
+            <Link
+              to="/dashboard"
+              className={classnames("text-sm font-medium text-gray-800", {
+                "text-indigo-600": location.pathname === "/dashboard",
+              })}
+            >
+              Todos
+            </Link>
           </div>
         </div>
       </div>
