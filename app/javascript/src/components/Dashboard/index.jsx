@@ -15,6 +15,7 @@ const Dashboard = () => {
       const {
         data: { tasks },
       } = await tasksApi.fetch();
+      logger.error(tasks);
       setTasks(tasks);
       setLoading(false);
     } catch (error) {
