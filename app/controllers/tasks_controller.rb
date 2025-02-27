@@ -5,4 +5,9 @@ class TasksController < ApplicationController
     tasks = Task.all
     render status: :ok, json: { tasks: }
   end
+
+  def show
+    task = Task.find_by(slug: params[:slug])
+    render status: :ok, json: { task: }
+  end
 end
