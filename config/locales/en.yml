@@ -28,6 +28,7 @@
 #       enabled: "ON"
 
 en:
+  successfully_updated: "Task was successfully updated!"
   successfully_created: "Task was successfully created!"
   task:
     slug:
