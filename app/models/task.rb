@@ -4,15 +4,20 @@
 #
 # Table name: tasks
 #
-#  id         :integer          not null, primary key
-#  slug       :string           not null
-#  title      :text             not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id               :integer          not null, primary key
+#  slug             :string           not null
+#  title            :text             not null
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  assigned_user_id :integer
 #
 # Indexes
 #
 #  index_tasks_on_slug  (slug) UNIQUE
+#
+# Foreign Keys
+#
+#  assigned_user_id  (assigned_user_id => users.id)
 #
 class Task < ApplicationRecord
   MAX_TITLE_LENGTH = 125
