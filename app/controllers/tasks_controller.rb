@@ -7,7 +7,7 @@ class TasksController < ApplicationController
   end
 
   def show
-    task = Task.find_by(slug: params[:slug])
+    task = Task.find_by!(slug: params[:slug])
     render status: :ok, json: { task: }
   end
 
