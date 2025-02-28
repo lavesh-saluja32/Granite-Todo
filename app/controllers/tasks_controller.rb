@@ -1,7 +1,13 @@
 # frozen_string_literal: true
 
 class TasksController < ApplicationController
-  before_action :load_task!, only: %i[show update]
+  before_action :load_task!, only: %i[show update destroy]
+
+  def destroy
+    @task.destroy!
+    render_json
+  end
+
   def index
     tasks = Task.all
     render status: :ok, json: { tasks: }
