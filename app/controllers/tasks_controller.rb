@@ -9,8 +9,8 @@ class TasksController < ApplicationController
   end
 
   def index
-    tasks = Task.all.as_json(include: { assigned_user: { only: %i[name id] } })
-    render_json({ tasks: })
+    @tasks = Task.includes(:assigned_user).all
+    render
   end
 
   def show
