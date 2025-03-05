@@ -4,12 +4,13 @@
 #
 # Table name: users
 #
-#  id              :integer          not null, primary key
-#  email           :string           not null
-#  name            :string           not null
-#  password_digest :string           not null
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
+#  id                   :integer          not null, primary key
+#  authentication_token :string
+#  email                :string           not null
+#  name                 :string           not null
+#  password_digest      :string           not null
+#  created_at           :datetime         not null
+#  updated_at           :datetime         not null
 #
 # Indexes
 #
@@ -21,6 +22,7 @@ class User < ApplicationRecord
   VALID_EMAIL_REGEX = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
   MAX_EMAIL_LENGTH = 255
   has_many :assigned_tasks, foreign_key: :assigned_user_id, class_name: "Task"
+  has_secure_token :authentication_token
   has_secure_password
   validates :name, presence: true, length: { maximum: MAX_NAME_LENGTH }
   validates :email, presence: true,
