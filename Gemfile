@@ -76,3 +76,5 @@ gem "tailwindcss-rails", "~> 4.1"
 gem "bcrypt", "~> 3.1.13"
 gem "pundit"
 gem "sqlite3_ar_regexp", "~> 3.0"
+
+gem "simplecov", require: false, group: :test
