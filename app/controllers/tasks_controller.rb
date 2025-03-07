@@ -1,30 +1,35 @@
 # frozen_string_literal: true
 
 class TasksController < ApplicationController
+  after_action :verify_authorized, except: :index
+  after_action :verify_policy_scoped, only: :index
   before_action :load_task!, only: %i[show update destroy]
 
   def destroy
+    authorize @task
     @task.destroy!
     puts @task
     render_json
   end
 
   def index
-    @tasks = Task.includes(:assigned_user).all
+    @tasks = policy_scope(Task).includes(:assigned_user)
     render
   end
 
   def show
-    render
+    authorize @task
   end
 
   def create
     task = current_user.created_tasks.new(task_params)
+    authorize task
     task.save!
     render_notice(t("successfully_created", entity: "Task"))
   end
 
   def update
+    authorize @task
     @task.update!(task_params)
     render_notice(t("successfully_updated"), entity: "Task")
   end
