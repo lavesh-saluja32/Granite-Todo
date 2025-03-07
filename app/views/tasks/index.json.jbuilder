@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
-json.tasks @tasks do |task|
-  json.extract! task, :id, :title, :slug
-  json.assigned_user do
-    json.extract! task.assigned_user, :id, :name if task.assigned_user.present?
+json.tasks do
+  json.pending @pending_tasks do |pending_task|
+    json.partial! "tasks/task", task: pending_task
+    json.progress pending_task.progress
   end
 
+  json.completed @completed_tasks
 end
