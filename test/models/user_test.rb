@@ -11,16 +11,10 @@
 #  password_digest      :string           not null
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
-#  organization_id      :integer          not null
 #
 # Indexes
 #
-#  index_users_on_email            (email) UNIQUE
-#  index_users_on_organization_id  (organization_id)
-#
-# Foreign Keys
-#
-#  organization_id  (organization_id => organizations.id)
+#  index_users_on_email  (email) UNIQUE
 #
 require "test_helper"
 
