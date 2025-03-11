@@ -93,5 +93,5 @@ class ApplicationController < ActionController::Base
 
   def handle_authorization_error
     render_error(t("authorization.denied"), :forbidden)
-    end
+  end
 end

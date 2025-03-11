@@ -25,7 +25,7 @@ class Comment < ApplicationRecord
   MAX_CONTENT_LENGTH = 511
 
   belongs_to :user # Each comment belongs to a single user
-  belongs_to :task # Each comment belongs to a single task
+  belongs_to :task, counter_cache: true # Each comment belongs to a single task
 
   validates :content, presence: true, length: { maximum: MAX_CONTENT_LENGTH }
 end
