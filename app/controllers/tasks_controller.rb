@@ -35,7 +35,7 @@ class TasksController < ApplicationController
   def update
     authorize @task
     @task.update!(task_params)
-    render_notice(t("successfully_updated"), entity: "Task") unless params.key?(:quiet)
+    render_notice(t("successfully_updated", entity: "Task")) unless params.key?(:quiet)
   end
 
   private
