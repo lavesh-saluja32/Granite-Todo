@@ -39,7 +39,7 @@ module.exports = function (api) {
       isTestEnv
         ? "babel-plugin-dynamic-import-node" // tests run in node environment
         : "@babel/plugin-syntax-dynamic-import",
-      isProductionEnv && [
+       [
         "babel-plugin-transform-react-remove-prop-types",
         { removeImport: true },
       ],
