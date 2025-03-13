@@ -1,5 +1,29 @@
 # frozen_string_literal: true
 
+# == Schema Information
+#
+# Table name: tasks
+#
+#  id               :integer          not null, primary key
+#  comments_count   :integer
+#  progress         :string           default("pending"), not null
+#  slug             :string           not null
+#  status           :string           default("unstarred"), not null
+#  title            :text             not null
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  assigned_user_id :integer
+#  task_owner_id    :integer
+#
+# Indexes
+#
+#  index_tasks_on_slug  (slug) UNIQUE
+#
+# Foreign Keys
+#
+#  assigned_user_id  (assigned_user_id => users.id)
+#  task_owner_id     (task_owner_id => users.id) ON DELETE => cascade
+#
 require "test_helper"
 
 class TaskTest < ActiveSupport::TestCase

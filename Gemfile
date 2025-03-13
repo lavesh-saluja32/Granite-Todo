@@ -85,3 +85,5 @@ group :development, :test do
   # For auto-generating demo data
   gem "faker"
 end
+
+gem "sidekiq", "< 7" # 7.0 is not compatible with sidekiq-unique-jobs
