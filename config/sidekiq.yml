@@ -5,3 +5,5 @@ production:
 :queues:
   - default
   - mailers
+:redis:
+  url: redis://127.0.0.1:6379/12
