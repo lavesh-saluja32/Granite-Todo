@@ -31,7 +31,7 @@ class PreferencesController < ApplicationController
     def load_preference
       @preference = current_user.preference
       unless @preference
-        render_error("Preference not found", :not_found)
+        render_error(t("not_found", entity: "Preference"), :not_found)
       end
     end
 end

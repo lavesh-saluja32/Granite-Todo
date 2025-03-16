@@ -26,6 +26,7 @@ class Preference < ApplicationRecord
     numericality: { only_integer: true },
     inclusion: {
       in: 0..23,
-      message: "value should be between 0 and 23"
+      message: I18n.t("preference.notification_delivery_hour.range")
+
     }
 end
