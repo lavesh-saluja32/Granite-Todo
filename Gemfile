@@ -85,3 +85,8 @@ group :development, :test do
   # For auto-generating demo data
   gem "faker"
 end
+# For periodic sidekiq jobs
+gem "sidekiq-cron"
+
+# For opening mails in development env
+gem "letter_opener", group: :development
