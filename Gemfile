@@ -87,3 +87,8 @@ group :development, :test do
 end
 
 gem "sidekiq", "< 7" # 7.0 is not compatible with sidekiq-unique-jobs
+# For periodic sidekiq jobs
+gem "sidekiq-cron"
+
+# For opening mails in development env
+gem "letter_opener", group: :development
