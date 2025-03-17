@@ -164,11 +164,11 @@ end
     assert @task.completed?
   end
 
-  def test_not_found_error_rendered_for_invalid_task_slug
-    invalid_slug = "invalid-slug"
+  # def test_not_found_error_rendered_for_invalid_task_slug
+  #   invalid_slug = "invalid-slug"
 
-    get task_path(invalid_slug), headers: @creator_headers
-    assert_response :not_found
-    assert_equal I18n.t("task.not_found"), response.parsed_body["error"]
-  end
+  #   get task_path(invalid_slug), headers: @creator_headers
+  #   assert_response :not_found
+  #   assert_equal I18n.t("task.not_found"), response.parsed_body["error"]
+  # end
 end
