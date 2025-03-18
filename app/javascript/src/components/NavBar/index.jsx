@@ -81,12 +81,6 @@ const NavBar = () => {
                 <span className="block">{userName}</span>
                 <i className="ri-arrow-down-s-line" />
               </Link>
-              <Link
-                className="block px-3 py-1.5 text-sm text-gray-800 hover:bg-gray-100"
-                to="/my/preferences"
-              >
-                Preferences
-              </Link>
               {isMenuVisible && (
                 <div className="absolute right-0 z-20 mt-2 w-48 rounded-md border border-gray-300 bg-white py-1 shadow-xl">
                   <Link
@@ -98,6 +92,18 @@ const NavBar = () => {
                 </div>
               )}
             </div>
+            <Link
+              className="block px-3 py-1.5 text-sm text-gray-800 hover:bg-gray-100"
+              to="/tasks/report"
+            >
+              Download Report
+            </Link>
+            <Link
+              className="block px-3 py-1.5 text-sm text-gray-800 hover:bg-gray-100"
+              to="/my/preferences"
+            >
+              Preferences
+            </Link>
           </div>
         </div>
       </div>
