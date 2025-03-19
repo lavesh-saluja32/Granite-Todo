@@ -2,8 +2,9 @@
 
 class Tasks::ReportsController < ApplicationController
   def create
+    puts "start"
     ReportsJob.perform_async(current_user.id)
-    render_notice(t("in_progress", action: "Report generation"))
+    render_json
   end
 
   def download
@@ -15,10 +16,6 @@ class Tasks::ReportsController < ApplicationController
   end
 
   private
-
-    def report_path
-      @_report_path ||= Rails.root.join("tmp/#{pdf_file_name}")
-    end
 
     def pdf_file_name
       "granite_task_report.pdf"
